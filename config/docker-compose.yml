@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+    mysql_db:
+        image: mysql
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: wikipassword
+          MYSQL_DATABASE: wikidb
+          MYSQL_USER: wikiuser
+          MYSQL_PASSWORD: wikiuserpassword
+        volumes:
+          - mysql_db_volume:/var/lib/mysql
+        ports:
+          - 3306:3306
+
+volumes:
+  mysql_db_volume: {}
