@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+    mysql_db:
+        image: mysql
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: wikipassword
+          MYSQL_DATABASE: wikidb
+          MYSQL_USER: wikiuser
+          MYSQL_PASSWORD: wikiuserpassword
+        volumes:
+          - mysql_db_volume:/var/lib/mysql
+        ports:
+          - 3306:3306
+
+    postgres_db:
+      image: postgres
+      restart: always
+      environment:
+        POSTGRES_DB: wikidb
+        POSTGRES_USER: wikiuser
+        POSTGRES_PASSWORD: wikiuserpassword
+      volumes:
+        - postgres_db_volume:/var/lib/postgresql/data
+      ports:
+        - 5435:5432
+
+    sqlserver_db:
+      image: mcr.microsoft.com/mssql/server
+      restart: always
+      environment:
+        ACCEPT_EULA: 'Y'
+        MSSQL_SA_PASSWORD: 'Wikipassword_007'
+      volumes:
+        - sqlserver_db_volume:/var/lib/postgresql/data
+      ports:
+        - 1433:1433
+
+volumes:
+  mysql_db_volume: {}
+  postgres_db_volume: {}
+  sqlserver_db_volume: {}
+
+
+
