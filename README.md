@@ -51,4 +51,5 @@ The absence of an automated, scalable solution for acquiring comprehensive unive
 - Utilizing Docker containers for different database systems.
 - Loading data into different databases from the Python environment.
 
+![image](https://github.com/user-attachments/assets/655b450b-492d-4190-9213-15a18dd5cdcf)
 
